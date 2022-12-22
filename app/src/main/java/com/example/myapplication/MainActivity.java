@@ -9,27 +9,36 @@ import android.widget.TextView;
 
 public class MainActivity extends AppCompatActivity {
 
-    private TextView textView;
-    int count;
+    private TextView infoLikes;
+    int like;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
-        count = 0;
-        textView = findViewById(R.id.textView);
-        Button button123 = findViewById(R.id.button123);
-        Button button124 = findViewById(R.id.button124);
+        Button clickLike = findViewById(R.id.clickLike);
+        Button clickUnlike = findViewById(R.id.clickUnlike);
+//        Button saveLikes = findViewById(R.id.saveLikes);
+        like = 0;
+        infoLikes = findViewById(R.id.infoLikes);
+
+
 
     }
 
-    public void nextCount(View view) {
-        count++;
-        textView.setText(String.valueOf(count + ""));
+    public void clickLike(View view) {
+        like++;
+        infoLikes.setText(String.valueOf(like + " polubień"));
     }
 
-    public void clickMinus(View view) {
-        count--;
-        textView.setText(String.valueOf(count + ""));
+    public void clickUnlike(View view) {
+        if(like>0){
+            like--;
+            infoLikes.setText(String.valueOf(like + " polubień"));
+        }
+
     }
+
+//    public void saveLikes(View view) {
+//    }
 }
