@@ -19,11 +19,17 @@ public class MainActivity extends AppCompatActivity {
         count = 0;
         textView = findViewById(R.id.textView);
         Button button123 = findViewById(R.id.button123);
+        Button button124 = findViewById(R.id.button124);
 
     }
 
     public void nextCount(View view) {
         count++;
+        textView.setText(String.valueOf(count + ""));
+    }
+
+    public void clickMinus(View view) {
+        count--;
         textView.setText(String.valueOf(count + ""));
     }
 }
